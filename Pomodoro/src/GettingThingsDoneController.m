@@ -177,8 +177,9 @@
 	
 }
 
--(void) pomodoroFinished:(NSNotification*) notification {    
-    
+-(void) pomodoroFinished:(NSNotification*) notification {
+    NSString* name = _pomodoroName;
+    [scripter executeScript:@"IncrementPomoCount" withParameter:name];
     [self setStatusToAvailable:[notification object]];
 
 }
@@ -198,10 +199,5 @@
    
 }
 
-- (void)dealloc {
-    
-    [super dealloc];
-    
-}
 
 @end
