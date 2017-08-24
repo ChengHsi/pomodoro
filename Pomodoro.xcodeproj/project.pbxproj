@@ -138,6 +138,7 @@
 		DCAF37CC164AFB6C003764C9 /* addTodoToReminders.applescript in Sources */ = {isa = PBXBuildFile; fileRef = DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */; };
 		DCAF37CD164B074D003764C9 /* getToDoListFromReminders.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */; };
 		DCAF37CE164B074D003764C9 /* addTodoToReminders.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */; };
+		DE0A665A1F4E1EF800AC4708 /* IncrementPomoCount.applescript in Resources */ = {isa = PBXBuildFile; fileRef = DE0A66591F4E1EF800AC4708 /* IncrementPomoCount.applescript */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -448,6 +449,7 @@
 		DBD776E116605536003F58B4 /* BrowsingNannyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowsingNannyController.m; path = src/BrowsingNannyController.m; sourceTree = "<group>"; };
 		DCAF37C7164AE360003764C9 /* getToDoListFromReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = getToDoListFromReminders.applescript; sourceTree = "<group>"; };
 		DCAF37CB164AFB6C003764C9 /* addTodoToReminders.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = addTodoToReminders.applescript; sourceTree = "<group>"; };
+		DE0A66591F4E1EF800AC4708 /* IncrementPomoCount.applescript */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = sourcecode.applescript; path = IncrementPomoCount.applescript; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,6 +514,7 @@
 		698F45D0133B5AF900311E34 /* scripts */ = {
 			isa = PBXGroup;
 			children = (
+				DE0A66591F4E1EF800AC4708 /* IncrementPomoCount.applescript */,
 				698F45D1133B5AF900311E34 /* addTodoToOmniFocus.applescript */,
 				698F45D2133B5AF900311E34 /* addTodoToThings.applescript */,
 				698F45D3133B5AF900311E34 /* getToDoListFromOmniFocus.applescript */,
@@ -925,7 +928,7 @@
 		69AE95DA133B4705004DC14D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = iUgol;
 			};
 			buildConfigurationList = 69AE95DD133B4705004DC14D /* Build configuration list for PBXProject "Pomodoro" */;
@@ -1045,6 +1048,7 @@
 				698F462C133B5AF900311E34 /* pomodoroFreeze.png in Resources */,
 				698F462D133B5AF900311E34 /* pomodoroFreeze_n.png in Resources */,
 				698F462E133B5AF900311E34 /* red.png in Resources */,
+				DE0A665A1F4E1EF800AC4708 /* IncrementPomoCount.applescript in Resources */,
 				698F462F133B5AF900311E34 /* run.png in Resources */,
 				698F4630133B5AF900311E34 /* shortcuts.png in Resources */,
 				698F4631133B5AF900311E34 /* speech.png in Resources */,
@@ -1333,7 +1337,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -1363,6 +1369,7 @@
 				CODE_SIGN_IDENTITY = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1393,6 +1400,7 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ugolandini.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1416,6 +1424,7 @@
 				GCC_PREFIX_HEADER = "Pomodoro/Pomodoro-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "Pomodoro/Pomodoro-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ugolandini.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
