@@ -179,35 +179,15 @@
 
 -(void) pomodoroFinished:(NSNotification*) notification {
     NSError *error = nil;
-    NSString* name = _pomodoroName;
-    NSString* result = @"";
-    NSString* regexAsString = @"([^ ]*)$";
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:regexAsString options:0 error:&error];
-    if (!error)
-    {
-        // Array of matches of regex in string
-        NSArray *results = [regex matchesInString:name options:0 range:NSMakeRange(0, name.length)];
-        
-        // View results to see range and length of matches
-        NSLog(@"results: %@", results);
-        
-        // int count = 1;
-        // For each item found...
-        for (NSTextCheckingResult *entry in results)
-        {
-            NSString *text = [name substringWithRange:entry.range];
-            result = text;
-            break;
-            // NSLog(@"Result %d: - %@", count++, text);
-        }
-    }
-    else
-    NSLog(@"Invalid epxression pattern: %@", error);
+    NSString *string = _pomodoroName;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^.*?] *" options:
+                                  NSRegularExpressionCaseInsensitive error:&error];
+    NSString *modifiedString = [regex stringByReplacingMatchesInString:string options:0 range:NSMakeRange(0, [string length]) withTemplate:@""];
+    NSLog(@"%@", modifiedString);
 
     // Create instance of NSRegularExpression
-    [scripter executeScript:@"IncrementPomoCount" withParameter:result];
+    [scripter executeScript:@"IncrementPomoCount" withParameter:modifiedString];
     [self setStatusToAvailable:[notification object]];
-
 }
 
 
